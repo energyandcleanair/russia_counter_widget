@@ -1,7 +1,12 @@
 #_counter {
-  font-family: Open Sans;
+  font-family: Open Sans, Helvetica, sans-serif;
   padding-top:  15px;
   background:  white;
+}
+
+#counter a {
+    color: #8cc9d0;
+    text-decoration: none;
 }
 
 .big-box {

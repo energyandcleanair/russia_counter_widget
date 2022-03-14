@@ -12,19 +12,19 @@ const html_string = `
             <div class='oc'>
                 <div class='small-box'>
                     <div class='title'><span>Oil</span></div>
-                    <div class='o-number'><span class='currency'>EUR </span><span id='oil_eur'> </span><span> M</span></div>
+                    <div class='o-number'><span class='currency'>EUR </span><span id='oil_eur'> </span><span>M</span></div>
                 </div>
             </div>
             <div class='oc'>
                 <div class='small-box'>
                     <div class='title'><span>Gas</span></div>
-                    <div class='o-number'><span class='currency'>EUR</span><span id='gas_eur'> </span><span> M</span></div>
+                    <div class='o-number'><span class='currency'>EUR </span><span id='gas_eur'> </span><span>M</span></div>
                 </div>
             </div>
             <div class='oc'>
                 <div class='small-box'>
                     <div class='title'><span>Coal</span></div>
-                    <div class='o-number'><span class='currency'>EUR </span><span id='coal_eur'> </span><span> M</span></div>
+                    <div class='o-number'><span class='currency'>EUR </span><span id='coal_eur'> </span><span>M</span></div>
                 </div>
             </div>
         </div>
@@ -58,10 +58,10 @@ const run_auto_counter = async(data)=>{
 }
 
 const update_ui = (data)=>{
-    document.getElementById('total_eur_per_sec').innerText = Math.floor(data.total_eur_updated).toLocaleString('en-US');
-    document.getElementById('oil_eur').innerText = Math.floor(data.oil_eur_updated/1000000).toLocaleString('en-US');
-    document.getElementById('coal_eur').innerText = Math.floor(data.coal_eur_updated/1000000).toLocaleString('en-US');
-    document.getElementById('gas_eur').innerText = Math.floor(data.gas_eur_updated/1000000).toLocaleString('en-US');
+    document.getElementById('total_eur_per_sec').innerText = Math.round(data.total_eur_updated).toLocaleString('en-US');
+    document.getElementById('oil_eur').innerText = Math.round(data.oil_eur_updated/1000000).toLocaleString('en-US');
+    document.getElementById('coal_eur').innerText = Math.round(data.coal_eur_updated/1000000).toLocaleString('en-US');
+    document.getElementById('gas_eur').innerText = Math.round(data.gas_eur_updated/1000000).toLocaleString('en-US');
 }
 
 const ui_setup = (elem_id)=>{
