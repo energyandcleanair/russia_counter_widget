@@ -29,7 +29,7 @@ const html_string = `
             </div>
         </div>
         <div class='caption'>
-            <p>Source: CREA analysis. See methodology <a href="https://crea.shinyapps.io/russia_counter/?tab=methodology" target='_blank'>here</a></p>
+            <p>Source: CREA analysis. See methodology <a href="https://crea.shinyapps.io/russia_counter/?tab=methodology" target='_blank'>here</a>.</p>
         </div>
     </div>`;
 
