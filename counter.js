@@ -48,7 +48,6 @@ const pull_data = async ()=>{
 }
 
 const run_auto_counter = async(data)=>{
-    console.log(data)
     update_ui(data);
     await new Promise(resolve => setTimeout(resolve, 1000));
     data.total_eur_updated += data.total_eur_per_sec;
@@ -73,8 +72,8 @@ const ui_setup = (elem_id)=>{
 const set_counter = (elem_id)=>{
     if(!document.getElementById(elem_id)){
         console.log('define parent element')
+        return;
     }
     ui_setup(elem_id);
     pull_data();
 }
-
