@@ -33,27 +33,36 @@ const html_string = `
         </div>
     </div>`;
 
-const poll_data = async ()=>{
+const pull_data = async ()=>{
  let response = await fetch("https://api.energyandcleanair.org/v1/russia_counter");
-
-  if (response.status == 502) {
-    await poll_data();
-  } else if (response.status != 200) {
-    showMessage(response.statusText);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    await poll_data();
+ if (response.status != 200) {
+    console.log("Error loading data")
   } else {
     let data = await response.json();
-    update_ui(data)
-    await poll_data();
+    data.total_eur_updated = data.total_eur
+    data.oil_eur_updated = data.oil_eur
+    data.gas_eur_updated = data.gas_eur
+    data.coal_eur_updated = data.coal_eur
+    run_auto_counter(data);
   }
 }
 
+const run_auto_counter = async(data)=>{
+    console.log(data)
+    update_ui(data);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    data.total_eur_updated += data.total_eur_per_sec;
+    data.oil_eur_updated += data.oil_eur_per_sec;
+    data.gas_eur_updated += data.gas_eur_per_sec;
+    data.coal_eur_updated += data.coal_eur_per_sec;
+    run_auto_counter(data)
+}
+
 const update_ui = (data)=>{
-    document.getElementById('total_eur_per_sec').innerText = Math.floor(data.total_eur).toLocaleString('en-US');
-    document.getElementById('oil_eur').innerText = Math.floor(data.oil_eur/1000000).toLocaleString('en-US');
-    document.getElementById('coal_eur').innerText = Math.floor(data.coal_eur/1000000).toLocaleString('en-US');
-    document.getElementById('gas_eur').innerText = Math.floor(data.gas_eur/1000000).toLocaleString('en-US');
+    document.getElementById('total_eur_per_sec').innerText = Math.floor(data.total_eur_updated).toLocaleString('en-US');
+    document.getElementById('oil_eur').innerText = Math.floor(data.oil_eur_updated/1000000).toLocaleString('en-US');
+    document.getElementById('coal_eur').innerText = Math.floor(data.coal_eur_updated/1000000).toLocaleString('en-US');
+    document.getElementById('gas_eur').innerText = Math.floor(data.gas_eur_updated/1000000).toLocaleString('en-US');
 }
 
 const ui_setup = (elem_id)=>{
@@ -66,6 +75,6 @@ const set_counter = (elem_id)=>{
         console.log('define parent element')
     }
     ui_setup(elem_id);
-    poll_data();
+    pull_data();
 }
 
