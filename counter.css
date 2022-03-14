@@ -1,5 +1,6 @@
 #_counter {
   font-family: Open Sans;
+  margin-top:  10px;
 }
 
 .big-box {
@@ -15,16 +16,15 @@
   }
 
   .big-box .currency{
-    font-size: 30px;
+    font-size: 30px !important;
   }
+
   .row {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
   }
   .oc {
     -webkit-box-flex: 0;
@@ -39,8 +39,8 @@
 h1{
   color: #35416C;
   font-size: 30px !important;
-  line-height:1.2;
-  margin-bottom:15px;
+  line-height: 1.2;
+  margin-bottom: 15px;
 }
 
 .subtitle {
@@ -85,12 +85,13 @@ h1{
   margin-left: auto;
   margin-right: auto;
   float: unset;
-  line-height:1.5;
   padding:0px 15px;
 }
+
 .caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   color: #888;
   text-align: right;
+  font-size:  12px;
 }
