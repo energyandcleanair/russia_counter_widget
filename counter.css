@@ -1,7 +1,12 @@
 #_counter {
-  font-family: Open Sans;
+  font-family: Open Sans, Helvetica, sans-serif;
   padding-top:  15px;
   background:  white;
+}
+
+#_counter a {
+    color: #8cc9d0;
+    text-decoration: none;
 }
 
 .big-box {
@@ -55,7 +60,8 @@ h1{
   color: #8cc9D0;
   font-size: 20px;
   margin-right: 10px;
-  margin-bottom: 0px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .big-box .counter{
