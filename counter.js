@@ -18,7 +18,7 @@ const html_string = `
             <div class='oc'>
                 <div class='small-box'>
                     <div class='title'><span>Gas</span></div>
-                    <div class='o-number'><span class='currency'>EUR</span><span id='gas_eur'> </span><span> M</span></div>
+                    <div class='o-number'><span class='currency'>EUR </span><span id='gas_eur'> </span><span> M</span></div>
                 </div>
             </div>
             <div class='oc'>
@@ -34,16 +34,29 @@ const html_string = `
     </div>`;
 
 const pull_data = async ()=>{
- let response = await fetch("https://api.energyandcleanair.org/v1/russia_counter");
+ let response = await fetch("https://api.russiafossiltracker.com/v0/counter_last?destination_region=EU28&aggregate_by=destination_region,commodity_group");
  if (response.status != 200) {
     console.log("Error loading data")
   } else {
-    let data = await response.json();
-    data.total_eur_updated = data.total_eur
-    data.oil_eur_updated = data.oil_eur
-    data.gas_eur_updated = data.gas_eur
-    data.coal_eur_updated = data.coal_eur
-    run_auto_counter(data);
+     let api_data = await response.json();
+     let data = {}
+
+     const total = api_data.data.find(x => (x.commodity_group == 'total'));
+     data.total_eur_updated = total.total_eur
+     data.total_eur_per_sec = total.eur_per_sec
+
+     const oil = api_data.data.find(x => (x.commodity_group == 'oil'));
+     data.oil_eur_updated = oil.total_eur
+     data.oil_eur_per_sec = oil.eur_per_sec
+
+     const gas = api_data.data.find(x => (x.commodity_group == 'gas'));
+     data.gas_eur_updated = gas.total_eur
+     data.gas_eur_per_sec = gas.eur_per_sec
+
+     const coal = api_data.data.find(x => (x.commodity_group == 'coal'));
+     data.coal_eur_updated = coal.total_eur
+     data.coal_eur_per_sec = coal.eur_per_sec
+     run_auto_counter(data);
   }
 }
 
