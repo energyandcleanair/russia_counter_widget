@@ -25,6 +25,11 @@
     font-size: 50px !important;
   }
 
+  .big-box .maintenance-subtext {
+    font-size: 30px !important;
+    margin-top: 0;
+  }
+
   .big-box .currency{
     font-size: 30px !important;
   }

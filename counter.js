@@ -6,7 +6,8 @@ const html_string = `
         </div>
         <div class='big-box'>
             <!-- <span class='currency'>EUR</span> -->
-            <div class='maintenance-text' style='text-align: center; margin-top: 40px; margin-bottom: 20px; color: #f6b26b;'>Under maintenance</div>
+            <div style='text-align: center; margin-top: 20px; margin-bottom: 10px; color: #f6b26b;'><span class='maintenance-text'>Under maintenance</span>
+                <p class='maintenance-subtext'>Back on 13 May 2022</p></div>
             <!-- <div class='counter' id='total_eur_per_sec'></div> -->
         </div>
         <div class='row'>
