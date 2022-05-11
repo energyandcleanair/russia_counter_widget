@@ -21,6 +21,10 @@
      font-size: 80px;
   }
 
+  .big-box .maintenance-text {
+    font-size: 50px !important;
+  }
+
   .big-box .currency{
     font-size: 30px !important;
   }

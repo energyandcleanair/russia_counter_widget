@@ -5,8 +5,9 @@ const html_string = `
             <div class='subtitle'>By European Union since 24 February 2022</div>
         </div>
         <div class='big-box'>
-            <span class='currency'>EUR</span>
-            <div class='counter' id='total_eur_per_sec'></div>
+            <!-- <span class='currency'>EUR</span> -->
+            <div class='maintenance-text' style='text-align: center; margin-top: 40px; margin-bottom: 20px; color: #f6b26b;'>Under maintenance</div>
+            <!-- <div class='counter' id='total_eur_per_sec'></div> -->
         </div>
         <div class='row'>
             <div class='oc'>
