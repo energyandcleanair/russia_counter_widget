@@ -7,7 +7,7 @@ const html_string = `
         <div class='big-box'>
             <!-- <span class='currency'>EUR</span> -->
             <div style='text-align: center; margin-top: 20px; margin-bottom: 10px; color: #f6b26b;'><span class='maintenance-text'>Under maintenance</span>
-                <p class='maintenance-subtext'>Back on 13 May 2022</p></div>
+                <p class='maintenance-subtext'>Back on 16 May 2022</p></div>
             <!-- <div class='counter' id='total_eur_per_sec'></div> -->
         </div>
         <div class='row'>
