@@ -5,10 +5,8 @@ const html_string = `
             <div class='subtitle'>By European Union since 24 February 2022</div>
         </div>
         <div class='big-box'>
-            <!-- <span class='currency'>EUR</span> -->
-            <div style='text-align: center; margin-top: 20px; margin-bottom: 10px; color: #f6b26b;'><span class='maintenance-text'>Under maintenance</span>
-                <p class='maintenance-subtext'>Back on 16 May 2022</p></div>
-            <!-- <div class='counter' id='total_eur_per_sec'></div> -->
+            <span class='currency'>EUR</span>
+            <div class='counter' id='total_eur_per_sec'></div>
         </div>
         <div class='row'>
             <div class='oc'>
@@ -31,7 +29,7 @@ const html_string = `
             </div>
         </div>
         <div class='caption'>
-            <p>Source: CREA analysis. See methodology <a href="https://crea.shinyapps.io/russia_counter/?tab=methodology" target='_blank'>here</a>.</p>
+            <p>Source: CREA analysis. See further results, methodology and updates <a href="https://crea.shinyapps.io/russia_counter/?tab=methodology" target='_blank'>here</a>.</p>
         </div>
     </div>`;
 
