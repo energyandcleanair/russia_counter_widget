@@ -34,7 +34,7 @@ const html_string = `
     </div>`;
 
 const pull_data = async ()=>{
- let response = await fetch("https://api.russiafossiltracker.com/v0/counter_last?destination_region=EU28&aggregate_by=destination_region,commodity_group");
+ let response = await fetch("https://api.russiafossiltracker.com/v0/counter_last?destination_region=EU&use_eu=True&aggregate_by=destination_region,commodity_group");
  if (response.status != 200) {
     console.log("Error loading data")
   } else {
