@@ -2,7 +2,7 @@ const html_string = `
     <div class='container'>
         <div class='headers'>
             <h1>Payments to Russia for fossil fuels</h1>
-            <div class='subtitle'>By European Union since 24 February 2022</div>
+            <div class='subtitle'>By European Union countries since 24 February 2022</div>
         </div>
         <div class='big-box'>
             <span class='currency'>EUR</span>
