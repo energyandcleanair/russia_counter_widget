@@ -1,35 +1,34 @@
 const html_string = `
     <div class='container'>
-        <div id='title' class='headers'>
-            <h1>Payments to Russia for fossil fuels</h1>
-            <div id='subtitle' class='subtitle'>By European Union countries since 24 February 2022</div>
+        <div id='titlebox' class='headers'>
+            <div id='title'></div>
+            <div id='subtitle' class='subtitle'></div>
         </div>
         <div class='big-box'>
-            <span class='currency'>EUR</span>
+            <span class='currency' id='eur'></span>
             <div class='counter' id='total_eur_per_sec'></div>
         </div>
         <div class='row'>
             <div class='oc'>
                 <div class='small-box'>
-                    <div class='title'><span>Oil</span></div>
-                    <div class='o-number'><span class='currency'>EUR </span><span id='oil_eur'> </span><span> M</span></div>
+                    <div class='title' id='oil'><span></span></div>
+                    <div class='o-number'><span class='currency' id='eur1'></span> <span id='oil_eur'> </span><span> M</span></div>
                 </div>
             </div>
             <div class='oc'>
                 <div class='small-box'>
-                    <div class='title'><span>Gas</span></div>
-                    <div class='o-number'><span class='currency'>EUR </span><span id='gas_eur'> </span><span> M</span></div>
+                    <div class='title' id='gas'><span></span></div>
+                    <div class='o-number'><span class='currency' id='eur2'></span> <span id='gas_eur'> </span><span> M</span></div>
                 </div>
             </div>
             <div class='oc'>
                 <div class='small-box'>
-                    <div class='title'><span>Coal</span></div>
-                    <div class='o-number'><span class='currency'>EUR </span><span id='coal_eur'> </span><span> M</span></div>
+                    <div class='title' id='coal'><span></span></div>
+                    <div class='o-number'><span class='currency' id='eur3'></span> <span id='coal_eur'> </span><span> M</span></div>
                 </div>
             </div>
         </div>
         <div id='caption' class='caption'>
-            <p>Source: CREA analysis. See further results, methodology and updates <a href="https://crea.shinyapps.io/russia_counter/?tab=methodology" target='_blank'>here</a>.</p>
         </div>
     </div>`;
 
@@ -39,6 +38,10 @@ const get_url_params = () => {
     let url_params = {}
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
+
+    let language = urlParams.get('language') || 'en'; 
+    url_params['language'] = language
+
     let eu_only = urlParams.get('eu_only') || 'true';
     url_params['eu_only'] = (eu_only === 'true');
     
@@ -106,11 +109,37 @@ const update_ui = (data) => {
     document.getElementById('gas_eur').innerText = Math.floor(data.gas_eur_updated / 1000000).toLocaleString('en-US');
 }
 
+var language;
+
+const get_language = (url_params) => {
+    $.ajax({
+        url: 'language/' + url_params['language'] + '.json', 
+        dataType: 'json', async: false, dataType: 'json', 
+        success: function (lang) { language = lang; } });
+}
+
 const ui_setup = (elem_id) => {
     let head = document.getElementById(elem_id);
     head.innerHTML = html_string;
     
     const url_params = get_url_params();
+
+    // Set langugage content
+    get_language(url_params);
+
+    $(document).ready(function(){
+        $('#title').html(language.title);
+        $('#subtitle').html(language.subtitle);
+        $('#eur').html(language.eur);
+        $('#eur1').html(language.eur);
+        $('#eur2').html(language.eur);
+        $('#eur3').html(language.eur);
+        $('#oil').html(language.oil);
+        $('#gas').html(language.gas);
+        $('#coal').html(language.coal);
+        $('#caption').html(language.caption);
+    });
+
     
     // show title
     var x = document.getElementById('title');
