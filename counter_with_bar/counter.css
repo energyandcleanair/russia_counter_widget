@@ -1,0 +1,123 @@
+.rc-container {
+  max-width: 600px !important;
+  margin-left: auto;
+  margin-right: auto;
+  float: unset;
+  line-height:1.5;
+}
+.rc-container .big-box {
+  color: #35416C;
+}
+.rc-container .section{
+    margin-bottom:4rem;
+}
+.rc-container .counter {
+    font-size: 3.5rem;
+}
+@media (min-width: 600px) {
+
+  .rc-container .big-box .currency{
+    font-size: 2rem;
+  }
+  .rc-container .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .rc-container .oc {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.3333333333%;
+    flex: 0 0 33.3333333333%;
+    position: relative;
+    width: 100%;
+    max-width: 33.3333333333%;
+  }
+}
+
+.rc-container h1{
+  color: #35416C;
+  font-size: 30px !important;
+  line-height:1.2;
+  margin-bottom:1rem;
+}
+
+.rc-container .subtitle {
+  color: #35416C;
+  font-weight: 200;
+  font-size: 1rem !important;
+  margin-top: -1rem !important;
+}
+
+.rc-container .big-box .currency{
+  color: #8cc9D0;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0;
+}
+
+.rc-container .right {
+  text-align:right;
+}
+.rc-container .center{
+  text-align:center;
+}
+.rc-container .w-100 {
+    width:100%;
+}
+
+.rc-container .big-box .counter{
+  font-size: 3rem; 
+  font-weight:700;
+}
+
+.rc-container .small-box .title {
+  font-size: 1.25rem;
+  margin-bottom: -.25rem;
+  font-weight:700;
+}
+
+.rc-container .small-box {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-align:center;
+}
+
+.rc-container .small-box .currency{
+  color: #8cc9D0;
+  font-size: 1.5rem !important;
+  margin-right: .25rem;
+}
+
+.rc-container .caption {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: #888;
+  text-align: right;
+}
+
+.rc-container .canvas.oil {
+    background:rgb(116 27 71)
+}
+.rc-container .canvas.gas{
+    background:rgb(246 178 107)
+}
+.rc-container .canvas.coal{
+    background:rgb(53 28 117)
+}
+.rc-container .small-box.oil {
+    color:rgb(116 27 71)
+}
+.rc-container .small-box.gas{
+    color:rgb(246 178 107)
+}
+.rc-container .small-box.coal{
+    color:rgb(53 28 117)
+}
+.rc-container .info {
+    padding: 0 1rem;
+}
+.head h2 {
+    margin-bottom:0;
+}
