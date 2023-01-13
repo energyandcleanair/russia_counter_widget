@@ -19,27 +19,50 @@ const create_html_string = _ =>(`
                     <div class='info'>
                         <div id='big_box' class='w-100 big-box'>
                             <div class='center'>
-                                <span class='counter' id='GLB_total_eur'></span>
-                                <span class='currency'>EUR</span>
+                                <span class='counter'>
+                                    <span id='GLB_total_eur'></span>
+                                    <span class='currency'>EUR</span>
+                                </span>
                              </div>
                         </div>
-                        <div class='row'>
+                        <div class='row centered-list mb-1'>
                             <div class='oc'>
                                 <div class='small-box oil'>
-                                    <div class='title'><span class='title-text'>Oil</span> (<span id='GLB_oil_percentage'></span>%)</div>
-                                    <div class='o-number'><span class='currency' id='eur1'></span> <span id='GLB_oil_eur'> </span><span> M</span></div>
+                                    <div class='row row-sm fit-width-md m-auto-md'>
+                                        <div class='d-contents ps-1'>
+                                            <img class='icon' src='./icons/oil.svg'></img>
+                                        </div>
+                                        <div class='ps-1'>
+                                            <div class='title'><span class='title-text'>Oil</span> (<span id='GLB_oil_percentage'></span>%)</div>
+                                            <div class='o-number'><span id='GLB_oil_eur'> </span><span> M</span> <span class='currency'></span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class='oc'>
                                 <div class='small-box gas'>
-                                    <div class='title'><span class='title-text'>Gas</span> (<span id='GLB_gas_percentage'></span>%)</div>
-                                    <div class='o-number'><span class='currency' id='eur2'></span> <span id='GLB_gas_eur'> </span><span> M</span></div>
+                                    <div class='row row-sm fit-width-md m-auto-md'>
+                                        <div class='d-contents ps-1'>
+                                            <img class='icon' src='./icons/gas.svg'></img>
+                                        </div>
+                                        <div class='ps-1'>
+                                            <div class='title'><span class='title-text'>Gas</span> (<span id='GLB_gas_percentage'></span>%)</div>
+                                            <div class='o-number'><span id='GLB_gas_eur'> </span><span> M</span> <span class='currency'></span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class='oc'>
                                 <div class='small-box coal'>
-                                    <div class='title'><span class='title-text'>Coal</span> (<span id='GLB_coal_percentage'></span>%)</div>
-                                    <div class='o-number'><span class='currency' id='eur3'></span> <span id='GLB_coal_eur'> </span><span> M</span></div>
+                                    <div class='row row-sm fit-width-md m-auto-md'>
+                                        <div class='d-contents'>
+                                            <img class='icon' src='./icons/coal.svg'></img>
+                                        </div>
+                                        <div class='ps-1'>
+                                            <div class='title'><span class='title-text'>Coal</span> (<span id='GLB_coal_percentage'></span>%)</div>
+                                            <div class='o-number'><span id='GLB_coal_eur'> </span><span> M</span> <span class='currency'></span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -56,34 +79,57 @@ const create_html_string = _ =>(`
             <div id='EU'>
                 <div class='head'>
                     <h2>
-                    <img src="/icons/eu.png" class="mx-1" style="min-height: 16px; max-height: 16px; min-width: 16px; max-width: 16px;" width="16" height="16">
+                    <img src="icons/eu.png" class="mx-1" style="min-height: 16px; max-height: 16px; min-width: 16px; max-width: 16px;" width="16" height="16">
                     European Union
                     </h2>
                 </div>
                 <div class='info'>
                     <div class='big-box'>
                         <div class='center'>
-                            <span class='counter' id='EU_total_eur'></span>
-                            <span class='currency'>EUR</span>
+                            <span class='counter h1'>
+                                <span id='EU_total_eur'></span>
+                                <span class='currency'>EUR</span>
+                            </span>
                          </div>
                     </div>
-                    <div class='row'>
+                    <div class='row centered-list mb-1'>
                         <div class='oc'>
                             <div class='small-box oil'>
-                                <div class='title'><span class='title-text'>Oil</span> (<span id='EU_oil_percentage'></span>%)</div>
-                                <div class='o-number'><span class='currency' id='eur1'></span> <span id='EU_oil_eur'> </span><span> M</span></div>
+                                <div class='row row-sm fit-width-md m-auto-md'>
+                                    <div class='d-contents ps-1'>
+                                        <img class='icon' src='./icons/oil.svg'></img>
+                                    </div>
+                                    <div class='ps-1'>
+                                        <div class='title'><span class='title-text'>Oil</span> (<span id='EU_oil_percentage'></span>%)</div>
+                                        <div class='o-number'><span id='EU_oil_eur'> </span><span> M</span> <span class='currency' id='eur1'></span></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class='oc'>
                             <div class='small-box gas'>
-                                <div class='title'><span class='title-text'>Gas</span> (<span id='EU_gas_percentage'></span>%)</div>
-                                <div class='o-number'><span class='currency' id='eur2'></span> <span id='EU_gas_eur'> </span><span> M</span></div>
+                                <div class='row row-sm fit-width-md m-auto-md'>
+                                    <div class='d-contents ps-1'>
+                                        <img class='icon' src='./icons/gas.svg'></img>
+                                    </div>
+                                    <div class='ps-1'>
+                                        <div class='title'><span class='title-text'>Gas</span> (<span id='EU_gas_percentage'></span>%)</div>
+                                        <div class='o-number'><span id='EU_gas_eur'> </span><span> M</span> <span class='currency'></span></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class='oc'>
                             <div class='small-box coal'>
-                                <div class='title'><span class='title-text'>Coal</span> (<span id='EU_coal_percentage'></span>%)</div>
-                                <div class='o-number'><span class='currency' id='eur3'></span> <span id='EU_coal_eur'> </span><span> M</span></div>
+                                <div class='row row-sm fit-width-md m-auto-md'>
+                                    <div class='d-contents ps-1'>
+                                        <img class='icon' src='./icons/coal.svg'></img>
+                                    </div>
+                                    <div class='ps-1'>
+                                        <div class='title'><span class='title-text'>Coal</span> (<span id='EU_coal_percentage'></span>%)</div>
+                                        <div class='o-number'><span id='EU_coal_eur'> </span><span> M</span> <span class='currency'></span></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -201,9 +247,9 @@ const get_url_params = () => {
     return url_params;
 }
 
-const get_language = async(URL_SETTINGS) => {
-    file_resp = await fetch(`language/${URL_SETTINGS['language']}.json`)
-    return await file_resp.json()
+const get_translation = async(URL_SETTINGS) => {
+    //import file_resp from `./language/${URL_SETTINGS['language']}.json` assert { type: 'JSON' };
+    return TRANSLATIONS[URL_SETTINGS['language']]
 }
 
 const update_text_of_identifier = (identifier, text)=>{
@@ -221,23 +267,25 @@ const ui_setup = async(container) => {
 
 
     // Set langugage content
-    const language = await get_language(URL_SETTINGS)
+    const translation = await get_translation(URL_SETTINGS)
 
-    document.getElementById('title').innerHTML = language.title;
-    document.getElementById('subtitle').textContent = language.subtitle;
-    update_text_of_identifier('.currency',language.oil);
-    update_text_of_identifier('.oil .title-text',language.oil);
-    update_text_of_identifier('.gas .title-text',language.gas);
-    update_text_of_identifier('.coal .title-text',language.coal);
-    document.getElementById('caption').innerHTML= language.caption;
+    document.getElementById('title').innerHTML = translation.title;
+    document.getElementById('subtitle').textContent = translation.subtitle;
+    update_text_of_identifier('.currency',translation.eur);
+    update_text_of_identifier('.oil .title-text',translation.oil);
+    update_text_of_identifier('.gas .title-text',translation.gas);
+    update_text_of_identifier('.coal .title-text',translation.coal);
+    document.getElementById('caption').innerHTML= translation.caption;
 
-    // show title
+    // show title and subtitle
     let x = document.getElementById('title');
     x.style.display = URL_SETTINGS.show_title ? 'block' : 'none'
+    let st = document.getElementById('subtitle');
+    st.style.display = URL_SETTINGS.show_title ? 'block' : 'none'
 
     // update subtitle if need be
     if (URL_SETTINGS.eu_only) {
-        document.getElementById('subtitle').textContent = language.eu_only_subtitle
+        document.getElementById('subtitle').textContent = translation.eu_only_subtitle
     }
     
 
