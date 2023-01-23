@@ -1,31 +1,47 @@
 .rc-container {
-  max-width: 600px !important;
+  max-width: 100% !important;
   margin-left: auto;
   margin-right: auto;
   float: unset;
   line-height:1.5;
 }
-.rc-container .big-box {
-  color: #35416C;
-}
 .rc-container .section{
     margin-bottom:4rem;
 }
-.rc-container .counter {
-    font-size: 3.5rem;
+.rc-container .currency{
+  color: #565656;
+  margin-right: 0.5rem;
+  margin-bottom: 0;
 }
-@media (min-width: 600px) {
-
-  .rc-container .big-box .currency{
-    font-size: 2rem;
-  }
+.rc-container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.rc-container .icon {
+    max-width:45px;
+}
+.rc-container .row-sm {
+    flex-direction:row!important;
+}
+.rc-container .row.centered-list{
+  justify-content:center;
+  width:auto;
+}
+.mb-1 {
+    margin-bottom:1rem!important;
+}
+@media (max-width: 800px) {
   .rc-container .row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-direction:column;
   }
+  .rc-container .row.centered-list{
+    justify-content:center;
+    width:fit-content;
+    margin:auto;
+  }
+}
+@media (min-width: 800px) {
   .rc-container .oc {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 33.3333333333%;
@@ -33,6 +49,12 @@
     position: relative;
     width: 100%;
     max-width: 33.3333333333%;
+  }
+  .rc-container .fit-width-md {
+      width:fit-content;
+  }
+  .rc-container .m-auto-md {
+      margin:auto;
   }
 }
 
@@ -50,12 +72,6 @@
   margin-top: -1rem !important;
 }
 
-.rc-container .big-box .currency{
-  color: #8cc9D0;
-  font-size: 1.5rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0;
-}
 
 .rc-container .right {
   text-align:right;
@@ -68,25 +84,25 @@
 }
 
 .rc-container .big-box .counter{
-  font-size: 3rem; 
+  font-size: 4rem; 
   font-weight:700;
 }
 
 .rc-container .small-box .title {
   font-size: 1.25rem;
-  margin-bottom: -.25rem;
+}
+.rc-container .small-box .o-number{
   font-weight:700;
+  line-height:1;
+  margin-bottom:0.25rem;
 }
 
 .rc-container .small-box {
   font-size: 1.5rem;
   margin-top: 1rem;
-  text-align:center;
 }
 
 .rc-container .small-box .currency{
-  color: #8cc9D0;
-  font-size: 1.5rem !important;
   margin-right: .25rem;
 }
 
@@ -106,13 +122,13 @@
 .rc-container .canvas.coal{
     background:rgb(53 28 117)
 }
-.rc-container .small-box.oil {
+.rc-container .small-box.oil .title {
     color:rgb(116 27 71)
 }
-.rc-container .small-box.gas{
+.rc-container .small-box.gas .title{
     color:rgb(246 178 107)
 }
-.rc-container .small-box.coal{
+.rc-container .small-box.coal .title{
     color:rgb(53 28 117)
 }
 .rc-container .info {
@@ -120,4 +136,11 @@
 }
 .head h2 {
     margin-bottom:0;
+    color:rgb(53 65 108)
+}
+.rc-container .d-contents {
+    display:contents;
+}
+.rc-container .ps-1{
+    padding-left:0.25rem;
 }
