@@ -294,8 +294,19 @@ const ui_setup = async(container) => {
     x.style.display = URL_SETTINGS.show_caption ? 'block' : 'none'
 }
 
-const start_counter = (container)=>{
+const start_counter = async(container)=>{
     URL_SETTINGS = get_url_params();
-    ui_setup(container)
-    pull_data();
+    await ui_setup(container)
+    await pull_data();
+
+    //sending the message again once data is loaded
+    let message = { element:'russia_widget_content', height: document.documentElement.scrollHeight};
+	window.top.postMessage(message, "*");
 }
+
+// For pages that are using the widget in iframe
+window.addEventListener('load', function() {
+    let message = { element:'russia_widget_content', height: document.documentElement.scrollHeight};
+
+	window.top.postMessage(message, "*");
+});
